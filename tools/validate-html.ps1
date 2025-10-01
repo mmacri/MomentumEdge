@@ -72,7 +72,7 @@ foreach ($f in $files) {
     # nav marker and loader (expect in full pages and in privacy/terms)
     if (-not $isInclude) {
         if ($l.IndexOf('nav will be injected here') -lt 0) { $issues += 'no nav marker' }
-        if ($l.IndexOf('/includes/nav-loader.js') -lt 0) { $issues += 'no nav-loader script' }
+    if (($l.IndexOf('/includes/nav-loader.js') -lt 0) -and ($l.IndexOf('includes/nav-loader.js') -lt 0)) { $issues += 'no nav-loader script' }
     }
 
     # services pages: require minimal og tags
