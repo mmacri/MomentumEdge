@@ -5,9 +5,31 @@
 
   async function loadNav(){
     try{
-      // Try a relative include first (works for project Pages hosted at /repo/).
-      // Fall back to the site-root absolute path if that fails.
-      const candidates = ['includes/nav.html','./includes/nav.html','/includes/nav.html'];
+      // Build a list of candidate URLs to fetch the nav from by walking up
+      // the current path segments. This handles sites served at domain root
+      // and project pages hosted under a subpath (e.g. /RepoName/...).
+      const candidates = [];
+      try{
+        const pathSegs = location.pathname.split('/').filter(Boolean);
+        // try from deepest prefix to root: /a/b -> /a/b/includes/nav.html, /a/includes/nav.html, /includes/nav.html
+        for(let n = pathSegs.length; n >= 0; n--){
+          const prefix = n === 0 ? '' : '/' + pathSegs.slice(0,n).join('/');
+          const candidate = location.origin + prefix + '/includes/nav.html';
+          candidates.push(candidate);
+        }
+      }catch(e){ /* ignore */ }
+      // Also try script-relative path if available (covers some hosting setups)
+      try{
+        const cs = document.currentScript && document.currentScript.src;
+        if(cs){
+          const sUrl = new URL(cs, location.href);
+          const base = sUrl.origin + sUrl.pathname.replace(/\/[^\/]*$/, '');
+          candidates.unshift(base + '/includes/nav.html');
+        }
+      }catch(e){ /* ignore */ }
+      // Last-resort relative fetches (may be relative to current folder)
+      candidates.push('includes/nav.html');
+      candidates.push('./includes/nav.html');
       let resp = null;
       let html = null;
       for(const p of candidates){
@@ -15,6 +37,7 @@
           resp = await fetch(p);
           if(resp && resp.ok){
             html = await resp.text();
+            console.info && console.info('nav-loader: loaded nav from', p);
             break;
           }
         }catch(e){ /* ignore and try next */ }
