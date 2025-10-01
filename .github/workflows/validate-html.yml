@@ -1,0 +1,18 @@
+name: HTML Validation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-html:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run HTML Validator (PowerShell)
+        shell: pwsh
+        run: |
+          Write-Host "Running tools/validate-html.ps1"
+          pwsh -NoProfile -ExecutionPolicy Bypass -File tools/validate-html.ps1
