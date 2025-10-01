@@ -5,11 +5,21 @@
 
   async function loadNav(){
     try{
-  // Fetch the nav include from the site root. This keeps behavior consistent
-  // across pages (the include is located at /includes/nav.html).
-  const resp = await fetch('/includes/nav.html');
-      if(!resp.ok) return;
-      const html = await resp.text();
+      // Try a relative include first (works for project Pages hosted at /repo/).
+      // Fall back to the site-root absolute path if that fails.
+      const candidates = ['includes/nav.html','./includes/nav.html','/includes/nav.html'];
+      let resp = null;
+      let html = null;
+      for(const p of candidates){
+        try{
+          resp = await fetch(p);
+          if(resp && resp.ok){
+            html = await resp.text();
+            break;
+          }
+        }catch(e){ /* ignore and try next */ }
+      }
+      if(!html) return;
       const container = document.createElement('div');
       container.innerHTML = html;
 
@@ -21,7 +31,7 @@
         else el.setAttribute('data-resolved-href', resolved);
       });
 
-      // append nav to top of body
+  // append nav to top of body
       const header = container.firstElementChild;
       if(header) document.body.insertBefore(header, document.body.firstChild);
 
