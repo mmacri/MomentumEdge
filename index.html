@@ -1,211 +1,197 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Momentum Edge Consulting — Home</title>
-<link href="assets/images/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#0a2a47",
-              "background-light": "#f6f7f8",
-              "background-dark": "#111921",
-            },
-            fontFamily: {
-              display: ["Manrope"],
-            },
-            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
-          },
-        },
-      };
-    </script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-</head>
-<body class="bg-background-light dark:bg-background-dark font-display text-[#18181B] dark:text-white">
-<div class="relative flex min-h-screen w-full flex-col">
-<meta name="description" content="Momentum Edge Consulting delivers strategic technology and business advisory services to drive growth, efficiency, and compliance for enterprises."/>
-<!-- Nav will be injected here by includes/nav-loader.js -->
-<script defer>
-(function(){
-  const candidates = (function(){
-    const list = [];
-    try{ const segs = location.pathname.split('/').filter(Boolean); for(let n=segs.length;n>=0;n--){ const prefix = n===0? '': '/' + segs.slice(0,n).join('/'); list.push(location.origin + prefix + '/includes/nav-loader.js'); } }catch(e){}
-    try{ const cs = document.currentScript && document.currentScript.src; if(cs){ const sUrl = new URL(cs, location.href); const base = sUrl.origin + sUrl.pathname.replace(/\/[^\/]*$/,''); list.unshift(base + '/includes/nav-loader.js'); } }catch(e){}
-    list.push(location.origin + '/includes/nav-loader.js');
-    list.push('includes/nav-loader.js');
-    list.push('./includes/nav-loader.js');
-    return Array.from(new Set(list));
-  })();
-
-  let i=0;
-  function tryLoad(){
-    if(i>=candidates.length){ console.error('nav-loader: could not load any candidate'); return; }
-    const s = document.createElement('script');
-    s.src = candidates[i]; s.defer = true;
-    s.onload = function(){ console.info('nav-loader: loaded from', candidates[i]); };
-    s.onerror = function(){ i++; tryLoad(); };
-    document.head.appendChild(s);
-  }
-  tryLoad();
-})();
-</script>
 <main class="flex-1">
-<section class="relative">
-<div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzhwtujvYdAZPpNUNUMTb_VbYNuGPNq7BdBjQK_2b9n3insh9PuGcfneoGOopdMerqrQxnLXZPBjeciHVWdNeBODaRsQBzzL30tKT-lpSWxms4vQebA0EqBbNePqop_EYggxQns9bcCqBrEKqMh9KwjAbKfLPo0rmPVZjIS6d23l4ytpcHzOfHkW5U-eT5X3f1535nMEYQQSWC1p0YxdYKIafuk5cWqXklriyvrEx5XIzDurxd9GxmcwP4dV_oqIxQz2OCBFkrcF6e");'></div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20"></div>
-<div class="relative mx-auto max-w-7xl px-6 py-32 text-white">
-<div class="max-w-3xl">
-<h1 class="text-4xl font-extrabold tracking-tighter sm:text-5xl lg:text-6xl">
-                Elevate Your Business with Strategic Insights
-              </h1>
-<p class="mt-6 text-lg text-white/90">
-                Momentum Edge Consulting delivers tailored solutions to drive growth and optimize performance. Partner with us to achieve your business objectives.
-              </p>
-<div class="mt-8 flex flex-wrap gap-4">
-<button class="rounded-lg bg-primary px-6 py-3 font-bold text-white transition-colors hover:bg-primary/90" onclick="location.href='services/index.html'">
-                  Explore Services
-                </button>
-<button class="rounded-lg bg-white/20 px-6 py-3 font-bold text-white backdrop-blur-sm transition-colors hover:bg-white/30" onclick="location.href='contact/index.html'">
-                  Contact Us
-                </button>
-</div>
-</div>
-</div>
-</section>
-<section class="py-16 sm:py-24">
-<div class="mx-auto max-w-7xl px-6">
-<h2 class="text-3xl font-bold tracking-tighter">Our Services</h2>
-  <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-  <div class="flex flex-col gap-4">
-    <div class="aspect-square w-full overflow-hidden rounded-lg">
-      <a data-href="services/cio-advisory.html"><img loading="lazy" alt="Strategic CIO Advisory" class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_OLU6YLeZ_uWWjMWKzzPpIPZrVR6brcdDuf-lckl3GL7WRGGPLxpIVjG3RFzaCkrU2SueH4qhCZvPY7xnIMBLpq6Q1yOwQCPZgNdO9_4VbrlFK2ITg2pW2lTKHA4z0IGYLyYc5QIeBHdQiO8L4oU7W5yOpD9A-saGoIVgcxM26X-zbPLaQED9RbTr2szINavskpZYvbWDPK5esHNV0OkeaTbrJdFFZ-iy3c30LbGowENtsqd2E87HnugsDKetk-Pb7XOSuUY8Eebk"/></a>
+
+  <!-- Hero -->
+  <section class="relative">
+    <div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzhwtujvYdAZPpNUNUMTb_VbYNuGPNq7BdBjQK_2b9n3insh9PuGcfneoGOopdMerqrQxnLXZPBjeciHVWdNeBODaRsQBzzL30tKT-lpSWxms4vQebA0EqBbNePqop_EYggxQns9bcCqBrEKqMh9KwjAbKfLPo0rmPVZjIS6d23l4ytpcHzOfHkW5U-eT5X3f1535nMEYQQSWC1p0YxdYKIafuk5cWqXklriyvrEx5XIzDurxd9GxmcwP4dV_oqIxQz2OCBFkrcF6e");'></div>
+    <div class="absolute inset-0 bg-primary/75 mix-blend-multiply"></div>
+    <div class="relative mx-auto max-w-7xl px-6 py-28 text-white">
+      <div class="max-w-3xl">
+        <p class="text-sm uppercase tracking-wider text-white/80">Strategic Technology & Business Advisory</p>
+        <h1 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">We help technology & healthcare leaders achieve measurable growth and operational resilience</h1>
+        <p class="mt-4 text-lg text-white/90">We combine strategy, technical execution, and measurable KPIs to deliver outcomes: faster time-to-value, lower costs, and stronger compliance posture.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a class="inline-flex items-center rounded-lg bg-white text-primary px-6 py-3 font-bold shadow hover:scale-[1.02]" href="contact/index.html">Schedule a Call</a>
+          <a class="inline-flex items-center rounded-lg border border-white/30 text-white px-5 py-3 font-semibold hover:bg-white/10" href="contact/index.html">Get a Free Audit</a>
+        </div>
+      </div>
     </div>
-    <div>
-      <h3 class="text-lg font-bold">Strategic CIO Advisory</h3>
-      <p class="mt-1 text-primary/80 dark:text-white/60">Transform your IT strategy with expert guidance, aligning technology with your business goals.</p>
+  </section>
+
+  <!-- Problem / Pain Points -->
+  <section class="py-12 sm:py-16">
+    <div class="mx-auto max-w-6xl px-6">
+      <h2 class="text-2xl font-bold">Are you facing these challenges?</h2>
+      <p class="mt-2 text-primary/80">Common pain points we solve for our clients.</p>
+      <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-3xl text-primary">schedule</span>
+          <div>
+            <h4 class="font-semibold">Slow delivery</h4>
+            <p class="text-sm text-primary/80">Long project cycles that delay value realization.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-3xl text-primary">trending_down</span>
+          <div>
+            <h4 class="font-semibold">Rising costs</h4>
+            <p class="text-sm text-primary/80">Inefficient processes increasing operational spend.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-3xl text-primary">gavel</span>
+          <div>
+            <h4 class="font-semibold">Compliance risk</h4>
+            <p class="text-sm text-primary/80">Complex regulations creating audit exposure.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="material-symbols-outlined text-3xl text-primary">integration_instructions</span>
+          <div>
+            <h4 class="font-semibold">Legacy systems</h4>
+            <p class="text-sm text-primary/80">Hard-to-integrate platforms that stall digital initiatives.</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="flex flex-col gap-4">
-    <div class="aspect-square w-full overflow-hidden rounded-lg">
-      <a data-href="services/ai-automation.html"><img loading="lazy" alt="AI &amp; Automation" class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp-C4LkQ5_4tglnApjCvZN8KzANDosH1FK6zOrSZ_8oRidDkX1qKMP829lxFq9I3fyn8Oqt3CGXvI8z-veaEZxTz5g4n1wqXkbgXqmug6IlL-4Z0mTeuPkKtHNrJfla74HmHlqphwhb896L21CrXJTQdZ3yQQo32c22BfjVvITLG9cstIuU381OWyZSJPkdLmIwZ2kbDNHyt8ACT9QZaoonNsUMwIaL1grWgk-vd1eEbIZ8CcyNTC1UJ4h8LqDR4Rm5nzVizgDEbhp"/></a>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="py-12 sm:py-16 bg-background-light dark:bg-primary/5">
+    <div class="mx-auto max-w-7xl px-6">
+      <h2 class="text-2xl font-bold">How we help</h2>
+      <p class="mt-2 text-primary/80">Focused services that deliver measurable outcomes.</p>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <a class="group block rounded-xl bg-white p-6 shadow hover:shadow-lg" href="services/cio-advisory.html">
+          <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-3xl text-primary">support_agent</span>
+            <div>
+              <h3 class="font-semibold">CIO Advisory</h3>
+              <p class="mt-1 text-sm text-primary/80">Align technology strategy with business outcomes.</p>
+            </div>
+          </div>
+        </a>
+        <a class="group block rounded-xl bg-white p-6 shadow hover:shadow-lg" href="services/ai-automation.html">
+          <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-3xl text-primary">smart_toy</span>
+            <div>
+              <h3 class="font-semibold">AI & Automation</h3>
+              <p class="mt-1 text-sm text-primary/80">Automate workflows, reduce cost, and scale expertise.</p>
+            </div>
+          </div>
+        </a>
+        <a class="group block rounded-xl bg-white p-6 shadow hover:shadow-lg" href="services/healthcare-it.html">
+          <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-3xl text-primary">health_and_safety</span>
+            <div>
+              <h3 class="font-semibold">Healthcare IT</h3>
+              <p class="mt-1 text-sm text-primary/80">Secure, compliant platforms for patient-centered care.</p>
+            </div>
+          </div>
+        </a>
+        <a class="group block rounded-xl bg-white p-6 shadow hover:shadow-lg" href="services/partner-enablement.html">
+          <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-3xl text-primary">handshake</span>
+            <div>
+              <h3 class="font-semibold">Partner Enablement</h3>
+              <p class="mt-1 text-sm text-primary/80">Choose, integrate, and scale partner ecosystems.</p>
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
-    <div>
-      <h3 class="text-lg font-bold">AI &amp; Automation</h3>
-      <p class="mt-1 text-primary/80 dark:text-white/60">Leverage the power of AI and automation to streamline processes, reduce costs, and drive innovation.</p>
+  </section>
+
+  <!-- Process / Approach -->
+  <section class="py-12 sm:py-16">
+    <div class="mx-auto max-w-6xl px-6">
+      <h2 class="text-2xl font-bold">Our approach</h2>
+      <p class="mt-2 text-primary/80">A clear, outcome-driven process that reduces risk and accelerates value.</p>
+      <div class="mt-8 grid gap-6 sm:grid-cols-3">
+        <div class="space-y-3">
+          <div class="h-12 w-12 rounded-full bg-primary text-white grid place-items-center font-bold">1</div>
+          <h4 class="font-semibold">Discover</h4>
+          <p class="text-sm text-primary/80">Rapid assessment of people, processes, and technology to identify opportunity.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="h-12 w-12 rounded-full bg-primary text-white grid place-items-center font-bold">2</div>
+          <h4 class="font-semibold">Design</h4>
+          <p class="text-sm text-primary/80">Practical roadmaps with measurable KPIs and clear ownership.</p>
+        </div>
+        <div class="space-y-3">
+          <div class="h-12 w-12 rounded-full bg-primary text-white grid place-items-center font-bold">3</div>
+          <h4 class="font-semibold">Deliver</h4>
+          <p class="text-sm text-primary/80">Iterative implementation focused on speed, quality, and outcomes.</p>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="flex flex-col gap-4">
-    <div class="aspect-square w-full overflow-hidden rounded-lg">
-      <a data-href="services/healthcare-it.html"><img loading="lazy" alt="Healthcare IT Solutions" class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_DRkW0Q6t7xCq14GD_a8zjxzO1edZqIXFYjD_HYo7LRbxmxrK9FrA2ApJZclQgKz_fojWbmMJaQtxuqm8lzaYAbU_7KiJyAd0llHyuB29PYn-8fu5pbbT7Cx-u-nKKp7czet1RuO0PTMDSaTmds01cXIAyaBO8BMmCC-TdZ6DZMAvwGz6n88EWh9rmRd0-tmom6RsO_KsHbK_f2FhcBBz_Qt5zzmHnwTrryVDmBk8erIs3czcHocXkHtjLk9VUgxCI2kIGPqxBhcD"/></a>
+  </section>
+
+  <!-- Case Studies / Results -->
+  <section class="py-12 sm:py-16 bg-background-light dark:bg-primary/5">
+    <div class="mx-auto max-w-6xl px-6">
+      <h2 class="text-2xl font-bold">Case studies & results</h2>
+      <p class="mt-2 text-primary/80">Selected outcomes from recent engagements.</p>
+      <div class="mt-6 grid gap-6 md:grid-cols-2">
+        <div class="rounded-lg bg-white p-6 shadow">
+          <h3 class="font-semibold">Tech company — Go-to-market acceleration</h3>
+          <p class="mt-2 text-sm text-primary/80">Reduced feature time-to-market and improved release cadence.</p>
+          <ul class="mt-4 space-y-2">
+            <li class="text-sm"><strong>+35%</strong> faster release cycles</li>
+            <li class="text-sm"><strong>20%</strong> reduction in operational cost</li>
+          </ul>
+        </div>
+        <div class="rounded-lg bg-white p-6 shadow">
+          <h3 class="font-semibold">Healthcare provider — Secure modernization</h3>
+          <p class="mt-2 text-sm text-primary/80">Modernized patient platform to improve throughput and compliance.</p>
+          <ul class="mt-4 space-y-2">
+            <li class="text-sm"><strong>99.9%</strong> uptime after migration</li>
+            <li class="text-sm"><strong>Audit-ready</strong> evidence collected in weeks</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div>
-      <h3 class="text-lg font-bold">Healthcare IT</h3>
-      <p class="mt-1 text-primary/80 dark:text-white/60">Enhance patient care and operational efficiency with our specialized IT solutions for healthcare.</p>
+  </section>
+
+  <!-- Testimonials / Social Proof -->
+  <section class="py-12 sm:py-16">
+    <div class="mx-auto max-w-6xl px-6">
+      <h2 class="text-2xl font-bold">What our clients say</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2">
+        <blockquote class="rounded-lg bg-white p-6 shadow">
+          <p class="italic">"Momentum Edge helped us move from concept to production in months. Their team is strategic and hands-on."</p>
+          <div class="mt-4 font-semibold">— CEO, Innovate Solutions</div>
+        </blockquote>
+        <blockquote class="rounded-lg bg-white p-6 shadow">
+          <p class="italic">"Their advisory improved our compliance posture and reduced audit time by half."</p>
+          <div class="mt-4 font-semibold">— CIO, CareHealth</div>
+        </blockquote>
+      </div>
     </div>
-  </div>
-  <div class="flex flex-col gap-4">
-    <div class="aspect-square w-full overflow-hidden rounded-lg">
-      <a data-href="services/partner-enablement.html"><img loading="lazy" alt="Partner Enablement" class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB16H3ftfuZ7aT8IIzqo959o92Uuih03T5h4nlk0FncAS4iWvh6duHzJ6VBNYYlcz3ATuAJKsMZLtXz-kNjRaUvbrXedBZTrpRiklaXtafOw8CjtXDWk3MB8e_5c4J6UI2Q9quqOW4EMsJh7g2VtB7HO_zqEuC0E_zGM5Y6SeL9ysrmcAj6odFf-sh9ZVVqfTR0rwyDqH7HICFxs14oDlbtG0i48RB3MiRLUuCz4MzKqA7-rdt6IPUTDFX2QDcwU0bQVu6wJ87s6E56"/></a>
+  </section>
+
+  <!-- Call to Action / Contact Form -->
+  <section class="py-12 sm:py-16 bg-primary/5 dark:bg-primary/10">
+    <div class="mx-auto max-w-4xl px-6 text-center">
+      <h2 class="text-2xl font-bold">Ready to get started?</h2>
+      <p class="mt-2 text-primary/80">Schedule a call or request a free audit — we'll show a practical plan in 1–2 weeks.</p>
+      <div class="mt-6">
+        <a class="inline-block rounded-lg bg-primary px-6 py-3 text-white font-bold" href="contact/index.html">Schedule a Call</a>
+      </div>
+
+      <form class="mt-8 grid gap-4 sm:grid-cols-2" action="mailto:info@momentumedge.com" method="post" enctype="text/plain">
+        <input name="name" class="rounded-md border p-3" placeholder="Your name" required />
+        <input name="email" type="email" class="rounded-md border p-3" placeholder="Email" required />
+        <textarea name="message" class="sm:col-span-2 rounded-md border p-3 h-36" placeholder="Tell us about your project"></textarea>
+        <div class="sm:col-span-2 text-right">
+          <button type="submit" class="rounded-lg bg-primary px-6 py-3 text-white font-bold">Send Request</button>
+        </div>
+      </form>
     </div>
-    <div>
-      <h3 class="text-lg font-bold">Partner Enablement</h3>
-      <p class="mt-1 text-primary/80 dark:text-white/60">Maximize your partner ecosystem's potential with our enablement strategies.</p>
-    </div>
-  </div>
-  <div class="flex flex-col gap-4">
-    <div class="aspect-square w-full overflow-hidden rounded-lg">
-      <a data-href="services/grc-technical-compliance.html"><img loading="lazy" alt="GRC Technical Compliance" class="h-full w-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOcwuvwts0HAVnAUzEsHAIYUtYLKTHWv8PabrwtQwUnEdZX4UGbwQifoMRUzp-59dt97ZCqXG6aS17B42FSApHwgEIARJ1oiXPmniU6mZWyYOoIiVLzR9fDfnYKL9Q3NnXIruQ_QFAOKoYRXxl2sElK6DBQ7hLPnCfSPi0MH_AMuc6MiOrbLbFutdD7sSkZAOQe7HXE9TLQqDVdoENg4MZTFqxFRyls6L5oclcqUV2LQhy8moDiPIaWHqMHGaVajeemZmN3NI0fF8W"/></a>
-    </div>
-    <div>
-      <h3 class="text-lg font-bold">GRC Technical Compliance</h3>
-      <p class="mt-1 text-primary/80 dark:text-white/60">Align your technical controls and governance processes with industry frameworks to reduce risk and simplify audits.</p>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<section class="bg-background-light dark:bg-primary/5 py-16 sm:py-24">
-<div class="mx-auto max-w-7xl px-6">
-<div class="grid gap-12 lg:grid-cols-2 lg:gap-16">
-<div>
-<h2 class="text-3xl font-bold tracking-tighter">Why Choose Us</h2>
-<h3 class="mt-4 text-4xl font-extrabold tracking-tighter sm:text-5xl">
-                  Your Partner in Success
-                </h3>
-<p class="mt-6 text-lg text-primary/80 dark:text-white/60">
-                  At Momentum Edge Consulting, we combine deep industry expertise with a client-centric approach to deliver exceptional results.
-                </p>
-</div>
-<div class="grid gap-8 sm:grid-cols-2">
-<div class="flex flex-col gap-3">
-<div class="aspect-video w-full overflow-hidden rounded-lg">
-<img loading="lazy" alt="Experienced Consultants" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4EUVabB-ENnnj3QSo6wMUZ3dvm13Xty-4hyg8tF-HzTsx23kS5fpVbKa2nEBsSRtA9xmKMk1XKEeUDJCHP0uYi7ssGYhSC6Nr18ieUSGQ2ezop_rOmPpWasHEE-Su34ajyWj3ubmxFo1u-EPhP9uow243JWVal1jsWVpAyOA9Zuye0nZU2G7fY9a_msFMDo4NyXfVW1kCw5xzLStVgdGmH84Y9n5tsJWSFnabHl-vhcE6TwPI8BcYhWr_-6QnSZopC4HL-sBW2g0X"/>
-</div>
-<div>
-<h4 class="font-bold">Experienced Consultants</h4>
-<p class="mt-1 text-sm text-primary/80 dark:text-white/60">
-                      Our team of seasoned professionals brings a wealth of knowledge to every project.
-                    </p>
-</div>
-</div>
-<div class="flex flex-col gap-3">
-<div class="aspect-video w-full overflow-hidden rounded-lg">
-<img loading="lazy" alt="Tailored Solutions" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8tAui5Y8tVHEktDCMMjJ2rwQ9MnnpQYPQRMx9bkOmbCkIG9F9cqlLhyr5EFe3Qhkm86VGzDa3Z73d30i5CxXxylHCwRrgqT4ELpBQUmEeJBK9HWd4qCz0sREn0bWkfqVew9ZWqHCHUZB75tfeY-0booQLU56NcLpxDePhoDzFUAqtVh1uS1uXlPhlCS0OSEeMBSw6tGId7uYSnqt79hhe2_hKDaxFi9upoPK8I2DKwd1d-W8Y_3W4bHcqlfbfOiQC-b9Ll2VMf5mP"/>
-</div>
-<div>
-<h4 class="font-bold">Tailored Solutions</h4>
-<p class="mt-1 text-sm text-primary/80 dark:text-white/60">
-                      We customize our services to meet your unique needs.
-                    </p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="py-16 sm:py-24">
-<div class="mx-auto max-w-7xl px-6">
-<h2 class="text-center text-3xl font-bold tracking-tighter">
-              Client Success Stories
-            </h2>
-<div class="mt-12 grid gap-8 md:grid-cols-2">
-<div class="rounded-lg border border-primary/10 p-6">
-<div class="flex items-center gap-4">
-<img alt="Sarah Chen" class="h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCocgKYmhOhF0fB_FilsFXCSOH98EyS3xoE-CT6HEZxdHngS8j_lO6nsBBx36zWEXeOrtNpzIyJy0p8N3Hc2_9iQqGloUrhRNdI3sIumVJV7l4a-xa_UuTpm8fVNPcn2dfBAnLrS4Qz1v1xiprJf8JgP67AdnSRf2BMW-uDNo4zvhYxvoVS0a7Triv2_JgYnAnTYTGXegSPOmdeprTJo0yJNkiAK4YgssG4ZOheZJA1NnOHSPqhOhI2j_lfBVIGS8hGFXhd2GoxIPqc"/>
-<div>
-<p class="font-bold">Sarah Chen, CEO</p>
-<p class="text-sm text-primary/80 dark:text-white/60">
-                      Innovate Solutions
-                    </p>
-</div>
-</div>
-<div class="mt-4 flex text-primary">
-<span class="material-symbols-outlined text-lg">star</span>
-<span class="material-symbols-outlined text-lg">star</span>
-<span class="material-symbols-outlined text-lg">star</span>
-<span class="material-symbols-outlined text-lg">star</span>
-<span class="material-symbols-outlined text-lg">star</span>
-</div>
-<p class="mt-4 italic text-primary/80 dark:text-white/70">
-                  "Momentum Edge Consulting transformed our business strategy. Their insights were invaluable, and we saw significant growth within months."
-                </p>
-</div>
-<div class="rounded-lg border border-primary/10 p-6">
-<div class="flex items-center gap-4">
-<img alt="David Lee" class="h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc4neEgaKVgTPfVR1EG5273Rln2jiU_b7NjZ3VPQQ5ZgRTBtdBa_yPMuXl7lvijAFtpv3YetDOonJSEaxn4vJM-H86POnCN52okBuFlxS7wKPrHp0Uxhl977QbG6tR58sBxvr0Wx2bWuhAcYq0aNaw2JLgovXFk_Dmpp2Ythey_7NluR_vrjotVIdfUYqqduGLfGomGkd2R5pGGIwpPSWE7aBqI_9fUeQwq_90fpftQzVf1JaXR9zh5Q8Bjg8piu2tLMO_7wOlxzqV"/>
-<div>
-<p class="font-bold">David Lee, Founder</p>
-<p class="text-sm text-primary/80 dark:text-white/60">
-                      Growth Dynamics
-                    </p>
-</div>
+  </section>
+
+</main>
 </div>
 <div class="mt-4 flex text-primary">
 <span class="material-symbols-outlined text-lg">star</span>
