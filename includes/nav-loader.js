@@ -23,11 +23,28 @@
       const container = document.createElement('div');
       container.innerHTML = html;
 
-      // Resolve data-href -> href using root-relative paths
+      // Compute site root from the fetched nav URL so links become absolute and work
+      // whether the site is served from domain root or a project subpath (GitHub Pages).
+      const navUrlObj = new URL(resp.url, location.href);
+      let siteRoot = navUrlObj.origin + navUrlObj.pathname.replace(/\/includes\/nav\.html$/, '');
+      siteRoot = siteRoot.replace(/\/$/, '');
+
+      // Resolve data-href -> absolute href using siteRoot
       container.querySelectorAll('[data-href]').forEach(el=>{
         const target = el.getAttribute('data-href') || '';
-        const resolved = target.startsWith('/') ? target : ('/' + target.replace(/^\/+/,''));
-        if(el.tagName.toLowerCase() === 'a') el.setAttribute('href', resolved);
+        let resolved = '';
+        // if target is already absolute URL, keep it
+        if (/^https?:\/\//i.test(target)) {
+          resolved = target;
+        } else if (target.startsWith('/')) {
+          // domain-root absolute path -> append to siteRoot
+          resolved = siteRoot + target;
+        } else {
+          // path relative to site root
+          resolved = siteRoot + '/' + target.replace(/^\/+/, '');
+        }
+
+        if (el.tagName.toLowerCase() === 'a') el.setAttribute('href', resolved);
         else el.setAttribute('data-resolved-href', resolved);
       });
 
@@ -122,27 +139,31 @@
       // wire CTA buttons and nav-link active state (same as before)
       header.querySelectorAll('.cta-btn').forEach(b=>{
         b.addEventListener('click', ()=>{
-          const href = b.getAttribute('data-href') || b.getAttribute('href');
-          if(href) location.href = href.startsWith('/') ? href : ('/' + href.replace(/^\/+/,''));
+          const href = b.getAttribute('data-resolved-href') || b.getAttribute('data-href') || b.getAttribute('href');
+          if(href) location.href = href;
         });
       });
 
-      const currentPath = location.pathname.replace(/\/index\.html$|^\//, '');
+      // Highlight current nav link by comparing normalized pathnames
       header.querySelectorAll('.nav-link').forEach(a=>{
-        const dh = a.getAttribute('data-href') || a.getAttribute('href') || '';
-        const target = dh.replace(/^\//,'').replace(/index\.html$/,'');
-        if(target === currentPath || ('/' + target) === location.pathname){
-          a.classList.add('text-primary','font-bold');
-        }
+        try {
+          const href = a.getAttribute('href') || a.getAttribute('data-href') || '';
+          if (!href) return;
+          const hrefPath = new URL(href, location.href).pathname.replace(/\/index\.html$/, '');
+          const locPath = location.pathname.replace(/\/index\.html$/, '');
+          if (hrefPath === locPath || locPath.endsWith(hrefPath)) {
+            a.classList.add('text-primary','font-bold');
+          }
+        } catch(e) { /* ignore malformed URLs */ }
       });
 
       // mobile links navigate and close menu after navigation
       header.querySelectorAll('.mobile-link').forEach(a=>{
         a.addEventListener('click', (ev)=>{
-          const dh = a.getAttribute('data-href') || a.getAttribute('href') || '';
+          const dh = a.getAttribute('data-resolved-href') || a.getAttribute('data-href') || a.getAttribute('href') || '';
           if(dh){
             // small timeout to allow click visual before navigation
-            setTimeout(()=>{ location.href = dh.startsWith('/') ? dh : ('/' + dh.replace(/^\/+/,'')); }, 30);
+            setTimeout(()=>{ location.href = dh; }, 30);
           }
         });
       });
